@@ -14,10 +14,22 @@ router.get("/", async(req, res) =>{
 
 router.put("/", async(req, res) => {
     const {title, institution, startDate, endDate, description } = req.body;
+    if (!title || !institution || !startDate) {
+        return res.status(400).json({error:" Tittle, Institutuion or description missing"});
+    }
+
+
     try {
-        const education = await Education.findOneAndUpdate({}, {content}, {new: true, upsert: true});
-        res.json(bio);
-    } catch (err) {
-        res.status(500).json({error: "Server Error"});
+        const updateEducation = await Education.findOneAndUpdate(
+            { title },
+            { title, institution, startDate, endDate, description },
+            { new: true, upset: true}
+        );
+        res.json(updateEducation);
+    }
+    catch (err) {
+        res.status(500).json({ error: "Server Error"});
     }
 });
+
+module.export = router;
