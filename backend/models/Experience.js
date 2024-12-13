@@ -1,4 +1,4 @@
-const mongoose = required("mongoose");
+const mongoose = require("mongoose");
 
 const ExperienceSchema = new mongoose.Schema({
     titile: {type: String, required: true },

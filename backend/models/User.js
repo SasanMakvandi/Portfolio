@@ -1,8 +1,8 @@
-const mongoose = required("mongoose");
+const mongoose = require("mongoose");
 
-const UserSchema = new mongoose.Schena({
+const UserSchema = new mongoose.Schema({
     username: {type: String, required: true, unuque: true},
     password: { type: String, required: true},
 });
 
-module.exports = mongoose.model("User", username);
+module.exports = mongoose.model("User", UserSchema);

@@ -1,4 +1,4 @@
-const mongoose = required("mongoose");
+const mongoose = require("mongoose");
 require('mongoose-type-url');
 
 const ProjectSchema = new mongoose.Schema({
@@ -8,4 +8,4 @@ const ProjectSchema = new mongoose.Schema({
     description: {type: String},
 });
 
-module.exports = mongoose.model("Experience", ExperienceSchema);
+module.exports = mongoose.model("Project", ProjectSchema);
