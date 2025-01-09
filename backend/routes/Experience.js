@@ -23,7 +23,7 @@ router.put("/", async(req, res) => {
         const updateExperience = await Experience.findOneAndUpdate(
             {title},
             {title, company, startDate, endDate, description},
-            {new: true, upset: true}    
+            {new: true, upsert: true}    
         );
         res.json(updateExperience);
     }

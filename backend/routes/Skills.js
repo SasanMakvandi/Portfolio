@@ -23,7 +23,7 @@ router.put("/", async(req, res) => {
         const updateSkills = await Skills.findOneAndUpdate(
             {content},
             {content},
-            {new: true, upset: true}
+            {new: true, upsert: true}
         );
         res.json(updateSkills);
     }

@@ -23,7 +23,7 @@ router.put("/", async(req, res) => {
         const updateEducation = await Education.findOneAndUpdate(
             { title },
             { title, institution, startDate, endDate, description },
-            { new: true, upset: true}
+            { new: true, upsert: true}
         );
         res.json(updateEducation);
     }

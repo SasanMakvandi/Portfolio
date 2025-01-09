@@ -21,7 +21,7 @@ router.put("/", async(req, res) => {
         const updateProjects = await Projects.findOneAndUpdate(
             {title},
             {title, tech, link, description},
-            {new: true, upset: true}
+            {new: true, upsert: true}
         );
         res.json(updateProjects);
     }
